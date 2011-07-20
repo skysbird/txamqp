@@ -185,6 +185,8 @@ class Codec(object):
       type = self.read(1)
       if type == "S":
         value = self.decode_longstr()
+      elif type == "F":
+        value = self.decode_table()
       elif type == "I":
         value = self.decode_long()
       else:
